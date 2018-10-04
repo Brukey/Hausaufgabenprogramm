@@ -1,7 +1,12 @@
 package de.khwlani.hausaufgaben;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -9,25 +14,21 @@ import javax.swing.JTextField;
 
 public class GleichungPanel extends JPanel{
 
-	JLabel anzlVarLabel;
-	JTextField anzlVarTextField;
+	JLabel label;
+	JTextField textField;
 	
 	public GleichungPanel(JFrame frame) {
 		this.setSize(frame.getSize());
 		this.setLocation(0,0);
-		this.setLayout(null);
+		this.setLayout(new BorderLayout());
 		
-		anzlVarLabel= new JLabel("Wie viele Variablen besitzen Sie?");
-		anzlVarLabel.setSize(frame.getWidth(),50);
-		anzlVarLabel.setLocation(0, 50);
+		label=new JLabel("Geben Sie unten ihre Gleichung ein.");
+		label.setSize(frame.getWidth(),50);
 		
-		anzlVarTextField=new JTextField();
-		anzlVarTextField.setEditable(true);
-		anzlVarTextField.setSize(50,50);
-		anzlVarTextField.setLocation(frame.getWidth()/2-anzlVarTextField.getWidth()/2,anzlVarLabel.getY()+25);
-
+		textField=new JTextField();
+		textField.setPreferredSize(new Dimension(100, 50));
 		
-		this.add(anzlVarLabel);
-		this.add(anzlVarTextField);
+		this.add(label,BorderLayout.NORTH);
+		this.add(textField, BorderLayout.CENTER);
 	}
 }
