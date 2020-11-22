@@ -99,6 +99,29 @@ public class Function {
             }
         };
 
+        
+        Function atan = new Function("atan", "x") {
+            @Override
+            public float evaluate(float x) {
+                System.out.println(x);
+                return (float) Math.atan(x);
+            }
+        };
+
+        Function acos = new Function("acos", "x") {
+            @Override
+            public float evaluate(float x) {
+                return (float) Math.acos(x);
+            }
+        };
+
+        Function asin = new Function("asin", "x") {
+            @Override
+            public float evaluate(float x) {
+                return (float) Math.asin(x);
+            }
+        };
+
         abs.register();
         tan.register();
         random.register();
@@ -106,5 +129,8 @@ public class Function {
         ln.register();
         sin.register();
         cos.register();
+        asin.register();
+        acos.register();
+        atan.register();
     }
 }

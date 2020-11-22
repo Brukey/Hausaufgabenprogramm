@@ -39,8 +39,6 @@ public class Plotter extends JPanel {
         float m12 = 0.0f;
         float m22 = 2.0f / this.height;
 
-        //System.out.printf("orthographic matrix:\n%f, %f\n%f, %f\n", m11, m21, m12, m22);
-
         // mulitply coordinate with orthographi matrix
         float xWorldPos = m11 * x + m21 * y;
         float yWorldPos = m12 * x + m22 * y;
