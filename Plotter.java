@@ -75,12 +75,10 @@ public class Plotter extends JPanel {
         g2d.setColor(Color.DARK_GRAY);
         g2d.fill(this.getBounds());
 
-        
-        
-
         float dx = this.getInterval('x');
         float dy = this.getInterval('y');
 
+        // draw axis
         Point left = transform(-this.width * 0.5f, 0.0f);
         Point right = transform(this.width * 0.5f, 0.0f);
 
@@ -128,11 +126,6 @@ public class Plotter extends JPanel {
         } catch (Exception e) {
             return;
         }
-        
-        
-
-        
-        
     }
     
 
