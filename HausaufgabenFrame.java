@@ -1,37 +1,32 @@
-package de.khwlani.hausaufgaben;
 
 import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
 
 public class HausaufgabenFrame extends JFrame{
 
-	JTabbedPane tabbedPane;
-	GleichungPanel gleichungPanel;
+	private JTabbedPane tabbedPane;
+	private GleichungPanel gleichungPanel;
+	
 	public HausaufgabenFrame() {
-	this.setSize(640,480);
-	this.setResizable(false);
-	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	this.setLayout(null);
-	
-	tabbedPane=new JTabbedPane();
-	tabbedPane.setLocation(0,0);
-	tabbedPane.setSize(this.getSize());
-	
-	gleichungPanel=new GleichungPanel(this);
-	
+		this.setSize(1020, 720);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		tabbedPane = new JTabbedPane();
+		gleichungPanel = new GleichungPanel(this);
 
-	tabbedPane.addTab("Gleichungen", gleichungPanel);
-	
-	this.getContentPane().add(tabbedPane);
-	this.setVisible(true);
+		tabbedPane.addTab("Gleichungen", gleichungPanel);
+		tabbedPane.addTab("Plotter", new Plotter());
+		
+		this.add(tabbedPane);
+		this.setVisible(true);
 	}
+
+	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		new HausaufgabenFrame();
-		
 	}
 
 }
